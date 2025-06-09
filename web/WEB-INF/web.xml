@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!-- 错误页面配置 -->
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error500.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>org.apache.jasper.JasperException</exception-type>
+        <location>/errorJasper.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error404.jsp</location>
+    </error-page>
+
+    <!-- Servlet映射配置 -->
+    <servlet>
+        <servlet-name>ScoreServlet</servlet-name>
+        <servlet-class>com.hello.servlet.ScoreServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ScoreServlet</servlet-name>
+        <url-pattern>/score/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CourseServlet</servlet-name>
+        <servlet-class>com.hello.servlet.CourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CourseServlet</servlet-name>
+        <url-pattern>/course/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>com.hello.servlet.TestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/test_db</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/insert_test_data</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/insert_student_score</url-pattern>
+    </servlet-mapping>
+
+    <!-- 添加CertificateServlet配置 -->
+    <servlet>
+        <servlet-name>CertificateServlet</servlet-name>
+        <servlet-class>com.hello.servlet.CertificateServlet</servlet-class>
+        <multipart-config>
+            <file-size-threshold>1048576</file-size-threshold> <!-- 1 MB -->
+            <max-file-size>10485760</max-file-size> <!-- 10 MB -->
+            <max-request-size>52428800</max-request-size> <!-- 50 MB -->
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CertificateServlet</servlet-name>
+        <url-pattern>/certificate/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- 添加StudentServlet配置 -->
+    <servlet>
+        <servlet-name>StudentServlet</servlet-name>
+        <servlet-class>com.hello.servlet.StudentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentServlet</servlet-name>
+        <url-pattern>/student/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- 添加StudentPersonal配置 -->
+    <servlet>
+        <servlet-name>StudentPersonal</servlet-name>
+        <servlet-class>com.hello.servlet.StudentPersonal</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentPersonal</servlet-name>
+        <url-pattern>/student-personal</url-pattern>
+    </servlet-mapping>
+
+    <!-- 添加TeacherServlet配置 -->
+    <servlet>
+        <servlet-name>TeacherServlet</servlet-name>
+        <servlet-class>com.hello.servlet.TeacherServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TeacherServlet</servlet-name>
+        <url-pattern>/teacher/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- 添加NotificationServlet配置 -->
+    <servlet>
+        <servlet-name>NotificationServlet</servlet-name>
+        <servlet-class>com.hello.servlet.NotificationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NotificationServlet</servlet-name>
+        <url-pattern>/notification/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- JSTL标签库已在jar包中，不需要额外配置 -->
+    <!-- 如果需要使用JSTL，只需在JSP页面中添加：
+         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+         <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+    -->
+</web-app>

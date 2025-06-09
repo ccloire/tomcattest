@@ -1,0 +1,15 @@
+# Compiled output
+/out/
+
+# IDE files for IntelliJ
+.idea/
+
+# Maven or Gradle build files (good practice to add)
+/target/
+build/
+*.jar
+*.war
+*.ear
+
+# Log files
+*.log

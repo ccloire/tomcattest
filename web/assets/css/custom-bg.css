@@ -1,0 +1,86 @@
+/* 自定义背景图片样式 */
+body {
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/p1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15; /* 调整透明度，使背景不会干扰内容 */
+    z-index: -1;
+}
+
+/* 调整卡片样式，增加透明度 */
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 美化表格 */
+.table {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* 美化表单 */
+.form-control {
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #7266ba;
+    box-shadow: 0 0 8px rgba(114, 102, 186, 0.4);
+}
+
+/* 美化按钮 */
+.btn {
+    border-radius: 6px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #7266ba;
+    border-color: #7266ba;
+}
+
+.btn-primary:hover {
+    background-color: #5e4caf;
+    border-color: #5e4caf;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(114, 102, 186, 0.3);
+}
+
+/* 页面标题样式 */
+.card-header h4 {
+    color: #5e4caf;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+/* 侧边栏样式调整 */
+.lyear-layout-sidebar {
+    background-color: rgba(42, 45, 65, 0.95);
+}
+
+/* 导航栏样式调整 */
+.topbar {
+    background-color: rgba(255, 255, 255, 0.95);
+}
